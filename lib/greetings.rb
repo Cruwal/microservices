@@ -4,10 +4,16 @@ class Greetings
   end
 
   def call
-    "Welcome, #{name.upcase}"
+    return 'Welcome!!' if invalid_name?
+
+    "Welcome, #{name.upcase}!"
   end
 
   private
+
+  def invalid_name?
+    name.nil? || name.empty?
+  end
 
   attr_reader :name
 end
